@@ -1,7 +1,7 @@
 {
-    "rules": {
-        "ginger":{
-          "skipPatterns": ["/JavaScript/i"]
-        }
+    "rule": {
+      "ginger": {
+        "skipPatterns": ["/JavaScript/i"]
+      }
     }
 }
