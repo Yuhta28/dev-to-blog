@@ -1,9 +1,8 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
@@ -21,6 +20,17 @@ jobs:
 
       - name: Run Embedme
         run: yarn run embedme:check
+
+  deploy:
+    name: Deploy
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+
+      - name: Install Dependencies
+        uses: bahmutov/npm-install@v1
 
       - name: Deploy to dev.to
         run: DEV_TO_GIT_TOKEN=${{ secrets.DEV_TO_GIT_TOKEN }} yarn run dev-to-git
