@@ -51,7 +51,9 @@ I will share cw which solves this problem.
 
 cw is the best way to tail AWS CloudWatch Logs from your terminal. https://github.com/lucagrulla/cw
 
-cw is a native executable targeting your OS, and not needed external dependencies such as `pip` and `npm`. Compared to `awslogs` which is famous helpful tool for CloudWatch Logs[1], cw is written in golang and faster. [1]: https://github.com/jorgebastida/awslogs
+cw is a native executable targeting your OS, and not needed external dependencies such as `pip` and `npm`. Compared to `awslogs` which is famous helpful tool for CloudWatch Logs^[1], cw is written in golang and faster.
+
+[^1]: https://github.com/jorgebastida/awslogs
 
 Moreover, it is very helpful that is possible to specify multiple groups. To use cw, I will try to execute `tail -f` for each streams, and watch logs.
 
