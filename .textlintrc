@@ -1,7 +1,5 @@
 {
-    "rule": {
-      "ginger": {
-        "skipPatterns": ["/JavaScript/i"]
-      }
+    "rules": {
+      "textlint-rule-ginger": true
     }
 }
