@@ -37,7 +37,7 @@ https://aws.amazon.com/amazon-linux-2/
 
 ## Replace a key pair
 
-You create an Amazon Machine Image(AMI) based on running EC2 instance and you launch EC2 instance from that AMI. Then you are asked to select a key pair. ![Image2](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rdd7g3irkdhlotloxvd.png)
+You create an Amazon Machine Image(AMI) based on running EC2 instance and you launch EC2 instance from that AMI. Then, select a key pair. ![Image2](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rdd7g3irkdhlotloxvd.png)
 
 There is a case that you need to replace a key pair attached EC2 instance because of security, review of operations and so on.
 
