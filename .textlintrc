@@ -1,5 +1,7 @@
 {
     "rules": {
-      "textlint-rule-ginger": true
+      "common-misspellings": {
+          "ignore": []
+      }
     }
 }

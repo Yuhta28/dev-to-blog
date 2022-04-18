@@ -32,7 +32,7 @@ jobs:
             node-
 
       - name: Install textlint
-        run: 'npm install --save-dev textlint textlint-rule-ginger'
+        run: 'npm install --save-dev textlint textlint-rule-common-misspellings'
       
       - name: Run textlint
         run: npx textlint --rule -f checkstyle "blog-posts/**/*.md" >> .textlint.log
