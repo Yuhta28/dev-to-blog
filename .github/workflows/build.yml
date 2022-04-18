@@ -21,8 +21,6 @@ jobs:
       - name: Run Embedme
         run: yarn run embedme:check
 
-name: Deploy
-
 on:
   pull_request:
     branches: [ main ]
