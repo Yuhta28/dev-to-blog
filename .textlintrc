@@ -2,9 +2,6 @@
     "rules": {
       "common-misspellings": {
           "ignore": []
-      },
-      "rousseau":{
-          "showLevels": ["suggestion", "warning", "error"]
       }
     }
 }
