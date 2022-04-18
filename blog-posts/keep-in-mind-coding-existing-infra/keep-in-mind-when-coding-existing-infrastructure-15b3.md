@@ -226,10 +226,6 @@ $ terraformer import aws -r ebs
 
 As a solution, I'm going to manage EBS to code manually `tf` file.
 
-## Test
-
-Test fefeMessages.
-
 ## Conclusion
 
 It turns out that existing resources using code is more difficult than I thought. My goals for this year is our existing resources using code and to spread code-managed infrastructure operations within the our team.
