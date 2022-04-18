@@ -32,19 +32,16 @@ jobs:
             node-
 
       - name: Install textlint
-        run: |
-          'npm install --save-dev textlint textlint-rule-ginger'
-           npm test
+        run: 'npm install --save-dev textlint textlint-rule-ginger'
       
       - name: Run textlint
-        run: npx textlint --rule -f checkstyle "blog-posts/**/*.md" >> .textlint.log
+        run: npm test #npx textlint --rule -f checkstyle "blog-posts/**/*.md" >> .textlint.log
 
       - name: Run reviewdog
         if: failure()
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ls -al
           cat .textlint.log
           cat .textlint.log | reviewdog -f=checkstyle -name="textlint" -reporter="github-pr-review"
 
