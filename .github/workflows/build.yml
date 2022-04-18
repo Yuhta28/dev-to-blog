@@ -21,14 +21,9 @@ jobs:
       - name: Run Embedme
         run: yarn run embedme:check
 
-on:
-  pull_request:
-    branches: [ main ]
-    types: [closed]
-
   deploy:
     name: Deploy
-    needs: [build]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
