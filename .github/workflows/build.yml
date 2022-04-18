@@ -35,7 +35,7 @@ jobs:
         run: 'npm install --save-dev textlint textlint-rule-ginger'
       
       - name: Run textlint
-        run: textlint --rule -f checkstyle "blog-posts/**/*.md" >> .textlint.log
+        run: npx textlint --rule -f checkstyle "blog-posts/**/*.md" >> .textlint.log
 
       - name: Run reviewdog
         if: failure()
