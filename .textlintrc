@@ -3,8 +3,8 @@
       "common-misspellings": {
           "ignore": []
       },
-      "ginger": {
-          "skipPatterns": []
+      "rousseau":{
+          "showLebels": ["suggestion", "warning", "error"]
       }
     }
 }
