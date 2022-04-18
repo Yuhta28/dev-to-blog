@@ -17,15 +17,13 @@ At first, I introduce these basics features.
 
 ### About RI
 
-Reserved Instances(RI) provide a significant discount compared to On-Demand pricing and provide a capacity reservation when used in a specific Availability Zone. https://aws.amazon.com/ec2/pricing/reserved-instances/?nc1=h_ls
+Reserved Instances(RI) provide a significant discount compared to On-Demand pricing and provide a capacity reservation when used in a specific Availability Zone. If you would like to use some instances of specific instance type, you can reduce the cost to select RI.
 
-If you would like to use some instances of specific instance type, you can reduce the cost to select RI.
-
-And also, you pay for the entire Reserved Instance term with one upfront payment and get the best effective hourly price when compared to running the same instance on an On-Demand basis. https://aws.amazon.com/rds/reserved-instances/?nc1=h_ls
+And also, you pay for the entire Reserved Instance term with one upfront payment and get the best effective hourly price when compared to running the same instance on an On-Demand basis.
 
 ### About SP
 
-Savings Plans also provides a discount compared to On-Demand pricing. https://aws.amazon.com/savingsplans/ RI is applied to discount regarding specific instance type or availability zone. On the other hand, SP is a flexible pricing model in exchange for a specific usage commitment. The discount rate of SP is smaller than one of RI, but you need not to specify instance type and can make more flexible cost optimization plans.
+Savings Plans also provides a discount compared to On-Demand pricing. RI is applied to discount regarding specific instance type or availability zone. On the other hand, SP is a flexible pricing model in exchange for a specific usage commitment. The discount rate of SP is smaller than one of RI, but you need not to specify instance type and can make more flexible cost optimization plans.
 
 ## Cautions for Purchase RI or SP
 
@@ -55,8 +53,6 @@ purchase-reserved-instances-offering
 --purchase-time <value>
 ```
 
-https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/purchase-reserved-instances-offering.html
-
 ## Conclusion
 
 I share post about difference between EC2 RI/SP and RDS RI on order timing. There are subtle differences in their specifications that made me confused. Please be careful with these differences.
@@ -64,3 +60,7 @@ I share post about difference between EC2 RI/SP and RDS RI on order timing. Ther
 ## Original
 
 https://zenn.dev/yuta28/articles/sp-attention https://zenn.dev/yuta28/articles/rds-attention
+
+## References
+
+https://aws.amazon.com/ec2/pricing/reserved-instances/?nc1=h_ls https://aws.amazon.com/rds/reserved-instances/?nc1=h_ls https://aws.amazon.com/savingsplans/ https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/purchase-reserved-instances-offering.html
