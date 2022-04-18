@@ -2,6 +2,9 @@
     "rules": {
       "common-misspellings": {
           "ignore": []
+      },
+      "ginger": {
+          "skipPatterns": []
       }
     }
 }
