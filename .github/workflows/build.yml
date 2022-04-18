@@ -12,8 +12,27 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
 
+      - name: Install reviewdog
+        uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+
       - name: Install Dependencies
         uses: bahmutov/npm-install@v1
+
+        #Make sure that cache is retrieved even if steps fail
+      - name: cache-node-modules
+        uses: pat-s/always-upload-cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            node-
+
+      - name: Install textlint
+        run: 'npm install --save-dev textlint textlint-rule-ginger'
 
       - name: Run Prettier
         run: yarn run prettier:check
