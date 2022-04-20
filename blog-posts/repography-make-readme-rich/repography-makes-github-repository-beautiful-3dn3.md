@@ -44,7 +44,9 @@ You can choose either markdown or reStructuredText from the format on the right.
 
 Repography provides another unique feature. It is that Repography output can be displayed in the office as a poster. ![poster1](https://i.imgur.com/DPQ1o4U.png) ![poster2](https://i.imgur.com/EZYS5Fu.png)
 
-The fee is €60, but I don't know if they will ship overseas. It would be difficult to send me living in Japan🤔
+The fee is €60, but I don't know if they will ship overseas. Fortunately, You can download the PNG file. ![image1](./assets/image1.png)
+
+Now you can have your posters printed print local print stores, even if you live far away. Also, you install the 4K desktop wallpaper (16:9). Stick it on your PC and make it a memory. ![image2](./assets/image2.png)
 
 ## Conclusion
 
