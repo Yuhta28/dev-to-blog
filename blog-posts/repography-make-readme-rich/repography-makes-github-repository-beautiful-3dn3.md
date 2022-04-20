@@ -48,7 +48,7 @@ The fee is €60, but I don't know if they will ship overseas. It would be diffi
 
 ## Conclusion
 
-I introduced Repography. It visualizes the amount of your commitments on the dashboard, so if you introduce it to your daily learning motivation or when developing OSS with your team, it may help improve your motivation as you can visualize your hard work.
+I introduced Repography. It visualizes the amount of your commitments on the dashboard, so if you introduce it to your daily learning motivation or when developing OSS with your team, it may help improve your motivation as you can visualize your hard work. Test is test.
 
 The poster would also be perfect for a stylish tech company office, so companies that are interested should consider it💡
 
