@@ -26,15 +26,15 @@ There's a `dev-to-git.json` file where you can define an array of blog posts, e.
 [
   {
     "id": 12345,
-    "relativePathToArticle": "./blog-posts/name-of-your-blog-post/name-of-your-blog-post.md"
+    "relativePathToArticle": "./template-posts/template-blog.md"
   }
 ]
 ```
 
 ## How can I find the ID of my blog post on dev.to?
 
-This repository is made to **edit** a blog post. Whether it's published or just a draft, you **have to create it** on dev.to directly. Unfortunately, dev.to does not display the ID of the blog post on the page. So once it's created, you can open your browser console and paste the following code to retrieve the blog post ID:  
-`$('div[data-article-id]').getAttribute('data-article-id')`
+This repository is made to **edit** a blog post. Whether it's published or just a draft, you **have to create it** on dev.to directly. Unfortunately, dev.to does not display the ID of the blog post on the page. So once it's created, you can find ID to send dev.to API  
+`curl -H "api-key: API_KEY" https://dev.to/api/articles/me/unpublished | jq '.[].id'`
 
 ## How do I configure every blog post individually?
 
@@ -50,20 +50,27 @@ If you've got some plugin to preview your markdown from your IDE, the images wil
 
 ## How to setup CI for auto deploying the blog posts?
 
-If you want to use Github and Travis, a `.travis.yml` file has been already prepared for you.
+If you want to use Github Actions, a `.build.yml` file has been already prepared for you.
 
-First, you have to activate the repository on Travis: https://travis-ci.org/account/repositories
-
-Then, you have to create a token on your dev.to account: https://dev.to/settings/account and set an environment variable on Travis called `DEV_TO_GIT_TOKEN` that will have the newly created token as value.
+First, you have to create a token on your dev.to account: https://dev.to/settings/account and set an environment variable on GitHUb called `DEV_TO_GIT_TOKEN` that will have the newly created token as value. ![](https://i.imgur.com/euVacys.png)
 
 ## README template
 
 The following is simply a template that you may want to use for your own version of that repository.
 
-# \<YOUR NAME\>'s blog source
+# Yuta's blog source
 
-https://dev.to/\<YOUR DEV.TO NICKNAME\>
+https://dev.to/yuta28
 
-## Blog posts
+# Repography Dashboard
+## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_badge.svg)](https://repography.com)
+[![Timeline graph](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_timeline.svg)](https://github.com/Yuhta28/dev-to-blog/commits)
+[![Issue status graph](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_issues.svg)](https://github.com/Yuhta28/dev-to-blog/issues)
+[![Pull request status graph](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_prs.svg)](https://github.com/Yuhta28/dev-to-blog/pulls)
+[![Trending topics](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_words.svg)](https://github.com/Yuhta28/dev-to-blog/commits)
+[![Top contributors](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_users.svg)](https://github.com/Yuhta28/dev-to-blog/graphs/contributors)
 
-- [\<BLOG POST NAME\>](https://dev.to/\<BLOG POST LINK\>)
+
+## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Structure
+[![Structure](https://images.repography.com/24732629/Yuhta28/dev-to-blog/structure/e05551a8c21c120f32e41c16b68f9d7b_table.svg)](https://github.com/Yuhta28/dev-to-blog)
+
