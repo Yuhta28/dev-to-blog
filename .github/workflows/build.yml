@@ -48,7 +48,9 @@ jobs:
           cat .textlint.log | reviewdog -f=checkstyle -name="textlint" -reporter="github-pr-review"
 
       - name: Run Prettier
-        run: yarn run prettier:check
+        run: | 
+          yarn run prettier:write
+          yarn run prettier:check
 
       - name: Run Embedme
         run: yarn run embedme:check
