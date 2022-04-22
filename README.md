@@ -63,14 +63,11 @@ The following is simply a template that you may want to use for your own version
 https://dev.to/yuta28
 
 # Repography Dashboard
-## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_badge.svg)](https://repography.com)
-[![Timeline graph](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_timeline.svg)](https://github.com/Yuhta28/dev-to-blog/commits)
-[![Issue status graph](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_issues.svg)](https://github.com/Yuhta28/dev-to-blog/issues)
-[![Pull request status graph](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_prs.svg)](https://github.com/Yuhta28/dev-to-blog/pulls)
-[![Trending topics](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_words.svg)](https://github.com/Yuhta28/dev-to-blog/commits)
-[![Top contributors](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_users.svg)](https://github.com/Yuhta28/dev-to-blog/graphs/contributors)
 
+## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_badge.svg)](https://repography.com)
+
+[![Timeline graph](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_timeline.svg)](https://github.com/Yuhta28/dev-to-blog/commits) [![Issue status graph](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_issues.svg)](https://github.com/Yuhta28/dev-to-blog/issues) [![Pull request status graph](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_prs.svg)](https://github.com/Yuhta28/dev-to-blog/pulls) [![Trending topics](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_words.svg)](https://github.com/Yuhta28/dev-to-blog/commits) [![Top contributors](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_users.svg)](https://github.com/Yuhta28/dev-to-blog/graphs/contributors)
 
 ## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Structure
-[![Structure](https://images.repography.com/24732629/Yuhta28/dev-to-blog/structure/e05551a8c21c120f32e41c16b68f9d7b_table.svg)](https://github.com/Yuhta28/dev-to-blog)
 
+[![Structure](https://images.repography.com/24732629/Yuhta28/dev-to-blog/structure/e05551a8c21c120f32e41c16b68f9d7b_table.svg)](https://github.com/Yuhta28/dev-to-blog)
