@@ -2,7 +2,7 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
 
 jobs:
@@ -35,7 +35,7 @@ jobs:
 
       - name: Install textlint
         run: 'npm install --save-dev textlint textlint-rule-common-misspellings textlint-rule-spellchecker'
-      
+
       - name: Run textlint
         run: npx textlint -f checkstyle "blog-posts/**/*.md" >> .textlint.log
 
