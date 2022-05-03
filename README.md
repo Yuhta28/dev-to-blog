@@ -33,8 +33,64 @@ There's a `dev-to-git.json` file where you can define an array of blog posts, e.
 
 ## How can I find the ID of my blog post on dev.to?
 
-This repository is made to **edit** a blog post. Whether it's published or just a draft, you **have to create it** on dev.to directly. Unfortunately, dev.to does not display the ID of the blog post on the page. So once it's created, you can find ID to send dev.to API  
-`curl -H "api-key: API_KEY" https://dev.to/api/articles/me/unpublished | jq '.[].id'`
+I write Go lang code to get the ID of my blog post on dev.to.
+
+```go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+	"net/http"
+	"os"
+
+	"github.com/itchyny/gojq"
+)
+
+func curl() interface{} {
+	DEVAPIKEY := os.Getenv("DEVAPIKEY") //Set your dev.to API key in your environment variables
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", "https://dev.to/api/articles/me/unpublished", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	req.Header.Set("api-key", DEVAPIKEY)
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+	var data interface{}
+	err = json.NewDecoder(resp.Body).Decode(&data)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return data
+}
+
+func main() {
+	// Parse JSON
+	query, err := gojq.Parse(".[].id")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	input := curl()
+	iter := query.Run(input) // or query.RunWithContext
+	for {
+		v, ok := iter.Next()
+		if !ok {
+			break
+		}
+		if err, ok := v.(error); ok {
+			log.Fatalln(err)
+		}
+		fmt.Printf("%1.0f\n", v)
+	}
+}
+```
+
+Execeute `get-blog-id.exe` and get the ID of your blog post,too.
 
 ## How do I configure every blog post individually?
 
