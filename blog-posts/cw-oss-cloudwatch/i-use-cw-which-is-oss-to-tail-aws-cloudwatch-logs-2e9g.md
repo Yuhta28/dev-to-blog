@@ -49,7 +49,7 @@ I will share cw which solves this problem.
 
 ## What's cw?
 
-`cw` is the best way to tail AWS CloudWatch Logs from your terminal. {% link https://github.com/lucagrulla/cw %}
+`cw` is the best way to tail AWS CloudWatch Logs from your terminal. https://github.com/lucagrulla/cw
 
 `cw` is a native executable targeting your OS, and not needed external dependencies such as `pip` and `npm`. Compared to `awslogs` which is famous helpful tool for CloudWatch Logs[^1], cw is written in golang and faster.
 
