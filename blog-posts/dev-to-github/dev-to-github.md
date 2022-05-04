@@ -8,4 +8,4 @@ tags: github, vscode
 ## Introduction
 
 I blog in Japanese at [Zenn](https://zenn.dev/), community of engineers to help one another out. Zenn makes us able to manage our blogs in GitHub repository and to write articles in my favorite editor. In addition, I merge articles into main branch they would automatically be published to my blog with CI/CD.  
-I wish that dev.to blog in the same way.
+I wish that dev.to blog in the same way. I realize that I manage my dev.to blog in GitHub repository and publish/update automatically it with reference to this article. {% link https://dev.to/maxime1992/manage-your-dev-to-blog-posts-from-a-git-repo-and-use-continuous-deployment-to-auto-publish-update-them-143j %}
