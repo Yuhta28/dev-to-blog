@@ -131,7 +131,7 @@ import (
 )
 
 func main() {
-	DEVAPIKEY := os.Getenv("DEVAPIKEY")
+	DEVAPIKEY := os.Getenv("DEVAPIKEY") //Set your dev.to API key in your environment variables
 	client := &http.Client{}
 	var data = strings.NewReader(`{"article":{"title":"Template","body_markdown":"Body","published":false,"tags":["tag1", "tag2"]}}`)
 	req, err := http.NewRequest("POST", "https://dev.to/api/articles", data)
@@ -173,7 +173,7 @@ import (
 )
 
 func curl() interface{} {
-	DEVAPIKEY := os.Getenv("DEVAPIKEY")
+	DEVAPIKEY := os.Getenv("DEVAPIKEY") //Set your dev.to API key in your environment variables
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", "https://dev.to/api/articles/me/unpublished", nil)
 	if err != nil {
@@ -213,6 +213,56 @@ func main() {
 	}
 }
 ```
+
+### 8. Make the template for new article
+
+Make the template for new article. `go run make-template.go`
+
+ ```go
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+
+	var blog string
+
+	print("Enter the name of the new article: ")
+	fmt.Scan(&blog)
+
+	// Create blog directory
+	if err := os.MkdirAll("blog-posts/"+blog, 0777); err != nil {
+		fmt.Println(err)
+	}
+	_, err := os.Create("blog-posts/" + blog + "/" + blog + ".md")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	// Create code directory
+	if err := os.MkdirAll("blog-posts/"+blog+"/code", 0777); err != nil {
+		fmt.Println(err)
+	}
+	file_code, err := os.Create("blog-posts/" + blog + "/code/.gitkeep")
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer file_code.Close()
+
+	// Create assets directory
+	if err := os.MkdirAll("blog-posts/"+blog+"/assets", 0777); err != nil {
+		fmt.Println(err)
+	}
+	file_assets, err := os.Create("blog-posts/" + blog + "/assets/.gitkeep")
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer file_assets.Close()
+}
+ ```
 
 ## References
 
