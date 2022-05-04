@@ -102,7 +102,7 @@ jobs:
         run: DEV_TO_GIT_TOKEN=${{ secrets.DEV_TO_GIT_TOKEN }} yarn run dev-to-git
 ```
 
-### 5. GitHub and dev.to intergration
+### 5. GitHub and dev.to integration
 
 I define a property `repository.url` in `package.json` and set it to the GitHub repository URL.
 
