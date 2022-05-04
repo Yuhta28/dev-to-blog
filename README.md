@@ -90,8 +90,6 @@ func main() {
 }
 ```
 
-Execeute `get-blog-id.exe` and get the ID of your blog post,too.
-
 ## How do I configure every blog post individually?
 
 A blog post has to have a [**front matter**](https://dev.to/p/editor_guide) header. You can find an example in this repository here: https://github.com/maxime1992/dev.to/blob/master/blog-posts/name-of-your-blog-post/name-of-your-blog-post.md
@@ -119,6 +117,10 @@ The following is simply a template that you may want to use for your own version
 https://dev.to/yuta28
 
 # Repography Dashboard
+
+Repography is a GitHub App that provides visualized dashboard in markdown format for GitHub repositories. 
+
+https://dev.to/yuta28/repography-makes-github-repository-beautiful-3dn3
 
 ## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/24732629/Yuhta28/dev-to-blog/recent-activity/9a05f1ae24af64427d393b4c278c1b87_badge.svg)](https://repography.com)
 
