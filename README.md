@@ -118,7 +118,7 @@ https://dev.to/yuta28
 
 # Repography Dashboard
 
-Repography is a GitHub App that provides visualized dashboard in markdown format for GitHub repositories. 
+Repography is a GitHub App that provides visualized dashboard in markdown format for GitHub repositories.
 
 https://dev.to/yuta28/repography-makes-github-repository-beautiful-3dn3
 
