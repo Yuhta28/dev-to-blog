@@ -2,7 +2,7 @@
 title: I manage my dev.to blog in GitHub repository
 published: false
 description:
-tags: github, vscode
+tags: github, vscode, githubactions
 ---
 
 ## Introduction
@@ -17,7 +17,7 @@ I implement GitHub Actions CI/CD with [DEV API](https://developers.forem.com/api
 
 ### 1. Copy the template
 
-Go to my repository. https://github.com/Yuhta28/dev-to-blog and copy the template. ![image1](./assets/image1.png)
+Go to the repository of article authors. https://github.com/maxime1992/dev.to and copy the template. ![image1](./assets/image1.png)
 
 ### 2. Generate a DEV Community API key
 
@@ -102,9 +102,9 @@ jobs:
         run: DEV_TO_GIT_TOKEN=${{ secrets.DEV_TO_GIT_TOKEN }} yarn run dev-to-git
 ```
 
-### 5. GitHub and dev.to integration
+### 5. Link GitHub with dev.to
 
-I define a property `repository.url` in `package.json` and set it to the GitHub repository URL.
+Define a property `repository.url` in `package.json` and set it to the GitHub repository URL.
 
 ```json
   "name": "dev.to",
@@ -116,7 +116,7 @@ I define a property `repository.url` in `package.json` and set it to the GitHub 
 
 ### 6. Create new article
 
-I can create a template for a new article to use DEV API. `go run create-post.go`
+Create a template for a new article to use DEV API. `go run create-post.go`
 
 ```go
 package main
@@ -157,7 +157,7 @@ Unfortunately, the template cannot be connected to GitHub repository, so I need 
 
 ### 7. Set the article ID
 
-I can get the article ID to use DEV API, too. `go run get-blog-id.go`
+Get the article ID to use DEV API, too. `go run get-blog-id.go`
 
 ```go
 package main
@@ -218,7 +218,7 @@ func main() {
 
 Make the template for new article. `go run make-template.go`
 
- ```go
+```go
 package main
 
 import (
@@ -262,8 +262,39 @@ func main() {
 	}
 	defer file_assets.Close()
 }
- ```
+```
 
+### 9. Link article ID with the template
+
+Connect the article ID with the template into `dev-to-git.json`.
+
+```json
+[
+  {
+    "id": 773216,
+    "relativePathToArticle": "./blog-posts/cw-oss-cloudwatch/i-use-cw-which-is-oss-to-tail-aws-cloudwatch-logs-2e9g.md"
+  },
+  {
+    "id": 1056501,
+    "relativePathToArticle": "./blog-posts/repography-make-readme-rich/repography-makes-github-repository-beautiful-3dn3.md"
+  }
+]
+```
+
+### 10. Deploy the article
+
+It is completed to manage my dev.to blog in GitHub repository.
+After that, push branch and pull request to main branch, and run GitHub Actions CI/CD.
+
+![image4.png](./assets/image4.png)
+
+## Conclusion
+
+I have managed my dev.to blog in GitHub repository. It makes me easy version control and I can write articles using my favorite editor(Visual Studio code). Moreover, the linter tool helps me to reduce careless mistakes in writing. So, let's try this method when writing articles in dev.to.
+
+## Original
+
+https://zenn.dev/yuta28/articles/dev-github-vscode
 ## References
 
 https://dev.to/maxime1992/manage-your-dev-to-blog-posts-from-a-git-repo-and-use-continuous-deployment-to-auto-publish-update-them-143j https://dev.to/beeman/automate-your-dev-posts-using-github-actions-4hp3
