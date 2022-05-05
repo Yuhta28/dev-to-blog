@@ -1,6 +1,6 @@
 ---
 title: I manage my dev.to blog in GitHub repository
-published: false
+published: true
 description:
 tags: github, vscode, githubactions
 ---
@@ -283,8 +283,7 @@ Connect the article ID with the template into `dev-to-git.json`.
 
 ### 10. Deploy the article
 
-It is completed to manage my dev.to blog in GitHub repository.
-After that, push branch and pull request to main branch, and run GitHub Actions CI/CD.
+It is completed to manage my dev.to blog in GitHub repository. After that, push branch and pull request to main branch, and run GitHub Actions CI/CD.
 
 ![image4.png](./assets/image4.png)
 
@@ -295,6 +294,7 @@ I have managed my dev.to blog in GitHub repository. It makes me easy version con
 ## Original
 
 https://zenn.dev/yuta28/articles/dev-github-vscode
+
 ## References
 
 https://dev.to/maxime1992/manage-your-dev-to-blog-posts-from-a-git-repo-and-use-continuous-deployment-to-auto-publish-update-them-143j https://dev.to/beeman/automate-your-dev-posts-using-github-actions-4hp3
