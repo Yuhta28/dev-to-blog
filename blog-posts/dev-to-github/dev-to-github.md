@@ -17,7 +17,7 @@ I implement GitHub Actions CI/CD with [DEV API](https://developers.forem.com/api
 
 ### 1. Copy the template
 
-Go to the repository of article authors. https://github.com/maxime1992/dev.to and copy the template. ![image1](./assets/image1.png)
+Go to the repository of article authors. https://github.com/Yuhta28/dev-to-blog-template and copy the template. ![image1](./assets/image1.png)
 
 ### 2. Generate a DEV Community API key
 
