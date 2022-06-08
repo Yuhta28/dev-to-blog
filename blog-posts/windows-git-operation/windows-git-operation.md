@@ -6,3 +6,4 @@ tags: windows, git, terminal
 ---
 
 ## Introduction
+Windows Terminal is a powerful tool for managing your development environment.
