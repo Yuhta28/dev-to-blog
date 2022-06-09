@@ -49,4 +49,9 @@ I define my own color and font in the following way.
 - font style:
   - Nerd Font
 
-Nerd Font has a wide selection of development-oriented icons that are useful.
+Nerd Font has a wide selection of development-oriented icons that are useful.  
+https://www.nerdfonts.com/#home
+
+### Installation Page
+
+https://eng.fontke.com/font/24644369/
