@@ -1,6 +1,7 @@
 ---
 title: Customize Windows Terminal and Git operations
 published: false
+cover_image: 'https://github.com/Yuhta28/dev-to-blog/blob/main/blog-posts/windows-git-operation/assets/image4.png'
 description: Make Windows Terminal useful by terminal design and git operations
 tags: windows, git, terminal
 ---
