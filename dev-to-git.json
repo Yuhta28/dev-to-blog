@@ -34,5 +34,9 @@
   {
     "id": 1108203,
     "relativePathToArticle": "./blog-posts/template-article/template-article.md"
+  },
+  {
+    "id": 1186318,
+    "relativePathToArticle": "./blog-posts/what-is-iam-instance-profile/what-is-iam-instance-profile.md"
   }
 ]
