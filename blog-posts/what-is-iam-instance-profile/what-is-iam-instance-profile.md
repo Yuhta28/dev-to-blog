@@ -7,4 +7,6 @@ tags: AWS, IAM
 
 ## Introduction
 
-What is IAM Instance Profile?
+You attach IAM role with IAM policy to AWS resources which granted to operate the other AWS Resources.
+
+![image1](./assets/image1.png)
