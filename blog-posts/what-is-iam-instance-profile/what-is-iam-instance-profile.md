@@ -1,5 +1,5 @@
 ---
-title: What is IAM Instance Profile?
+title: What is IAM instance profile?
 published: true
 description:
 tags: AWS, IAM
@@ -11,7 +11,7 @@ You attach IAM role with IAM policy to AWS resources which granted to operate th
 
 ![image1](./assets/image3.png)
 
-However, EC2 is not attached to IAM role, but is attached to IAM Instance Profile.
+However, EC2 is not attached to IAM role, but is attached to IAM instance profile.
 
 ![image2](./assets/image1.png)
 
@@ -26,9 +26,9 @@ In AWS CLI, There is the parameter about `IamInstanceProfile`, too.
 ]
 ```
 
-So, what is the IAM Instance Profile?
+So, what is the IAM instance profile?
 
-## About IAM Instance Profile
+## About IAM instance profile
 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html
 
