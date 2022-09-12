@@ -1,6 +1,6 @@
 ---
 title: What is IAM Instance Profile?
-published: false
+published: true
 description:
 tags: AWS, IAM
 ---
