@@ -1,7 +1,6 @@
 ---
 title: What is IAM instance profile?
 published: true
-cover_image: './blog-posts/windows-git-operation/assets/cover-image.jpg'
 description:
 tags: AWS, IAM
 ---
