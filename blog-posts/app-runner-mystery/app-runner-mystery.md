@@ -21,10 +21,20 @@ I found it convenient that it is not need to set complex network configure and i
 
 ## Increase Response time
 
-This is the graph of response time Datadog Agent obtained from our servers. 
+This is the graph of response time Datadog Agent obtained from our servers.
 
 ![image2](./assets/image2.png)
 
 Response time increased rapidly immediately after migrating to App Runner. After a day had passed and it was not back to normal, I moved it to ECS on Fargate.
 
 ## Curl inspection
+
+I prepared curl container[^1] which obtains response time and measured ECS on Fargate and App Runner to compare the performance of each container
+
+```dockerfile
+FROM  curlimages/curl:latest
+
+CMD  curl -s -o /dev/null -w '%{time_starttransfer}' <URL>
+```
+
+[^1]: https://hub.docker.com/r/curlimages/curl
