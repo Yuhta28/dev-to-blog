@@ -81,8 +81,7 @@ In my guess, deployed container on App Runner doesn't connect directly external 
 
 ## Solution
 
-I built monitoring system with Datadog Agent on Fargate instead of App Runner. And in combination with GitHub Actions, I built a CI/CD
-infrastructure so that datadog configuration files can be pushed to GitHub repository and automatically run up to container deployments.
+I built monitoring system with Datadog Agent on Fargate instead of App Runner. And in combination with GitHub Actions, I built a CI/CD infrastructure so that datadog configuration files can be pushed to GitHub repository and automatically run up to container deployments.
 
 ![image8](./assets/image8.png)
 
