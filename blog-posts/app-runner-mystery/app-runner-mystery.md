@@ -1,6 +1,6 @@
 ---
 title: Not documented App Runner specification
-published: false
+published: true
 description: description
 tags: aws, apprunner
 ---
@@ -17,7 +17,7 @@ https://aws.amazon.com/apprunner/
 
 > AWS App Runner is a fully managed container application service that lets you build, deploy, and run containerized web applications and API services without prior infrastructure or container experience.
 
-I found it convenient that it is not need to set complex network configure and is able to implement fully managed container CI/CD deployment. But, I found something odd when I monitored the media server externally with Agent on App Runner.
+I found it convenient that it is not need to set complex network configure and is able to implement fully managed container CI/CD infrastructure. But, I found something odd when I monitored the media server externally with Agent on App Runner.
 
 ## Increase Response time
 
@@ -38,3 +38,57 @@ CMD  curl -s -o /dev/null -w '%{time_starttransfer}' <URL>
 ```
 
 [^1]: https://hub.docker.com/r/curlimages/curl
+
+#### e.g.
+
+```console
+$ docker build -t curl-yuta .
+$ docker run --rm curl-yuta
+0.252717
+```
+
+There are two screenshots that Agent from ECS on Fargate or App Runner obtains response time.
+
+### ECS on Fargate
+
+![image3](./assets/image3.png)
+
+### App Runner
+
+![image4](./assets/image4.png)
+
+It found that the response time is slower when retrieved via App Runner, even in curl.
+
+## Mystery Container
+
+Datadog automatically registers containers with agents in their dashboards.
+
+### ECS on Fargate
+
+![image5](./assets/image5.png)
+
+### App Runner
+
+![image6](./assets/image6.png)
+
+On Fargate, when Datadog Agent was installed into the container, one unit was registered. However, on App Runner, two units was registered.
+
+Mystery container, `aws-fargate-request-proxy` was running, but I could not find details about this container in the App Runner documentation.
+
+In my guess, deployed container on App Runner doesn't connect directly external and it takes a long time since the proxy container exists between App Runner container and Internet.
+
+![image7](./assets/image7.png)
+
+## Solution
+
+I built monitoring system with Datadog Agent on Fargate instead of App Runner. And in combination with GitHub Actions, I built a CI/CD infrastructure so that datadog configuration files can be pushed to GitHub repository and automatically run up to container deployments.
+
+![image8](./assets/image8.png)
+
+## Conclusion
+
+I tried App Runner for the first time except tutorial. Unfortunately, I can not make use of it on business, however I feel that it is so convenient for App Runner to be deployed container easily. I would like to take advantage of this on another occasion.
+
+## Original
+
+https://zenn.dev/yuta28/articles/app-runner-proxy
