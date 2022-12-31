@@ -38,3 +38,43 @@ CMD  curl -s -o /dev/null -w '%{time_starttransfer}' <URL>
 ```
 
 [^1]: https://hub.docker.com/r/curlimages/curl
+
+#### e.g.
+
+```console
+$ docker build -t curl-yuta .
+$ docker run --rm curl-yuta
+0.252717
+```
+
+There are two screenshots that Agent from ECS on Fargate or App Runner obtains response time.
+
+### ECS on Fargate
+
+![image3](./assets/image3.png)
+
+### App Runner
+
+![image4](./assets/image4.png)
+
+It found that the response time is slower when retrieved via App Runner, even in curl.
+
+## Mystery Container
+
+Datadog automatically registers containers with agents in their dashboards.
+
+### ECS on Fargate
+
+![image5](./assets/image5.png)
+
+### App Runner
+
+![image6](./assets/image6.png)
+
+On Fargate, when Datadog Agent was installed into the container, one unit was registered. However, on App Runner, two units was registered.
+
+Mystery container, `aws-fargate-request-proxy` was running, but I could not find details about this container in the App Runner documentation.
+
+In my guess, deployed container on App Runner doesn't connect directly external and it takes a long time since the proxy container exists between App Runner container and Internet.
+
+![image7](./assets/image7.png)
