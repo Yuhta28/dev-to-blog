@@ -106,7 +106,7 @@ If you've got some plugin to preview your markdown from your IDE, the images wil
 
 If you want to use Github Actions, a `.build.yml` file has been already prepared for you.
 
-First, you have to create a token on your dev.to account: https://dev.to/settings/account and set an environment variable on GitHUb called `DEV_TO_GIT_TOKEN` that will have the newly created token as value. ![](https://i.imgur.com/euVacys.png)
+First, you have to create a token on your dev.to account: https://dev.to/settings/account and set an environment variable on GitHUb called `DEV_TO_GIT_TOKEN` that will have the newly created token as value.
 
 ## README template
 
