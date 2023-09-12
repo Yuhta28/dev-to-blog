@@ -1,5 +1,5 @@
 ---
-title: OpenTF forked Terraform is now available 
+title: OpenTF forked Terraform is now available
 published: false
 description:
 tags: terraform, opentf
