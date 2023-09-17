@@ -15,6 +15,14 @@ I plan to monitoring system with Datadog at office. At first, I prepared EC2 ser
 
 https://aws.amazon.com/apprunner/
 
+<head>
+<meta name="title" property="og:title" content="Managed Container Apps Service – AWS App Runner – Amazon Web Services">
+<meta property="og:type" content="Article">
+<meta name="image" property="og:image" content="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png">
+<meta name="description" property="og:description" content="AWS App Runner helps you deploy and scale from your source code or container image to a secure web application on AWS.">
+<meta name="author" content="No author found">
+</head>
+
 > AWS App Runner is a fully managed container application service that lets you build, deploy, and run containerized web applications and API services without prior infrastructure or container experience.
 
 I found it convenient that it is not need to set complex network configure and is able to implement fully managed container CI/CD infrastructure. But, I found something odd when I monitored the media server externally with Agent on App Runner.
