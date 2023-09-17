@@ -35,30 +35,14 @@ _I write articles in English with the help of DeepL_
 
 In August 2023, HashiCorp, a developer of OSS such as Terraform, switched Terraform from an open source license to the Business Source License (BSL).
 
-<iframe 
-  class="hatenablogcard" 
-  style="width:100%;height:155px;max-width:680px;" 
-  title="HashiCorp adopts Business Source License" 
-  src="https://hatenablog-parts.com/embed?url=https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license" 
-  width="300" height="150" frameborder="0" scrolling="no">
-</iframe>
-
 https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
 
 <head>
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@digitalocean" />
-<meta name="twitter:title" content="Sammy the Shark" />
-<meta name="twitter:description" content="Senior Selachimorpha at DigitalOcean" />
-<meta name="twitter:image" content="https://html.sammy-codes.com/images/large-profile.jpg" />
-</head>
-
-<head>
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Sammy the Shark" />
-<meta property="og:description" content="Senior Selachimorpha at DigitalOcean" />
-<meta property="og:url" content="https://html.sammy-codes.com/" />
-<meta property="og:image" content="https://html.sammy-codes.com/images/large-profile.jpg" />
+<meta name="title" property="og:title" content="HashiCorp adopts Business Source License">
+<meta property="og:type" content="Article">
+<meta name="image" property="og:image" content="https://www.datocms-assets.com/2885/1600142862-blog-library-product-hashicorp.png">
+<meta name="description" property="og:description" content="HashiCorp adopts the Business Source License to ensure continued investment in its community and to continue providing open, freely available products.">
+<meta name="author" content="Armon Dadgar">
 </head>
 
 This license change will not directly affect HashiCorp users of Terraform and other products. However, there is a movement against HashiCorp's license change, and a group has formed to pursue true open source, forked from Terraform. It is [OpenTF Foundation](https://opentf.org/).
