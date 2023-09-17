@@ -19,6 +19,7 @@ _I write articles in English with the help of DeepL_
       <li><a href="#about-monetization-of-terraform">About monetization of Terraform</a></li>
     </ul>
   </li>
+  <li><a href="#forked-opentf">Forked OpenTF</a></li>
   <li><a href="#original">Original</a></li>
   <li><a href="#references">References</a></li>
 </ul>
@@ -117,11 +118,33 @@ Also, they claim that HashiCorp might not support Terraform OSS issues and PR be
 
 As a side note, "Could HashiCorp's license change be due to poor monetization of Terraform?" A certain [article](https://www.theregister.com/2023/08/28/opentf_forks_terraform_code/) claim that this is the reason HashiCorp has changed its license.
 
-Stadil, CEO of SaaS company Scalr[^8] stated in the article.
+Asked why HashiCorp opted for a change of license, Stadil, CEO of Scalr[^8] claimed in the article.
 
-> Asked why HashiCorp opted for a change of license, Stadil claimed: "The reality here is that HashiCorp is not executing well on its Terraform cloud product. And because they're not executing well, other competitors like my company Scalr and a number of others have stepped in."
+> The reality here is that HashiCorp is not executing well on its Terraform cloud product. And because they're not executing well, other competitors like my company Scalr and a number of others have stepped in.
+
+To be honest, I think Terraform Cloud has become a little more difficult to because of the change in billing plans. The former plan allowed up to 5 users per organization to use Terraform Cloud for free, but the new plan allows up to 500 resources for free. 500 resources will soon exceed the free limit, so I think many users would have switched to the paid plan.
 
 [^8]: https://www.scalr.com/
+
+## Forked OpenTF
+
+OpenTF forked on September 6, 2023 already has over 5,000 stars.
+
+![](/blog-posts/opentf-fork-available/assets/image2.png)
+
+Git clone and run `opentf` on your local machine.
+
+```terminal
+$ git clone git@github.com:opentffoundation/opentf.git
+$ cd opentf
+
+$ make
+$ go install
+
+$ opentf version
+OpenTF v1.6.0-dev
+on linux_amd64
+```
 
 ## Original
 
