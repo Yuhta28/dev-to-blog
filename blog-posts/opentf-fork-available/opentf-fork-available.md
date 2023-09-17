@@ -13,6 +13,8 @@ tags: terraform, opentf, iac
   <li><a href="#about-open-source">About Open Source</a></li>
   <li><a href="#impact-of-hashicorps-license-change">Impact of HashiCorp's license change</a></li>
   <li><a href="#the-foundations-claims">The Foundation's claims</a></li>
+  <li><a href="#original">Original</a></li>
+  <li><a href="#references">References</a></li>
 </ol>
 
 ## Introduction
@@ -77,3 +79,15 @@ Don't get me wrong, even if we are building a competing product for HashiCorp, t
 [^5]: https://www.hashicorp.com/license-faq#competitive-product-bsl-coverage
 
 ## The Foundation's claims
+
+According to the manifesto, the Foundation strongly criticizes that the BSL is a poison pill for Terraform.
+
+Even if the license change does not affect end users or integration partners currently using Terraform, they claim that HashiCorp could change the license terms or its interpretation of them in the future so that they would not be able to freely use it.
+
+The Foundation is concerned that Terraform's influence will diminish and the community will wane as developers and enterprises leave Terraform out of their choices when selecting a tool to manage their infrastructure.
+
+## Original
+
+https://zenn.dev/yuta28/articles/fork-opentf-from-terraform
+
+## References
