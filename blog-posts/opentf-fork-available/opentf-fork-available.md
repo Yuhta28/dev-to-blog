@@ -376,7 +376,7 @@ I tried OpenTF, which is a forked of Terraform. I think there are pros and cons 
 
 ## Original
 
-https://zenn.dev/yuta28/articles/fork-opentf-from-terraform
+{% cta https://zenn.dev/yuta28/articles/fork-opentf-from-terraform %} my original post {% endcta %}
 
 ## References
 
