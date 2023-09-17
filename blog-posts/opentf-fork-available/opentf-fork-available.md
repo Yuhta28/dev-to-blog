@@ -136,7 +136,7 @@ To be honest, I think Terraform Cloud has become a little more difficult to beca
 
 OpenTF forked on September 6, 2023 already has over 5,000 stars.
 
-![image2](/blog-posts/opentf-fork-available/assets/image2.png)
+![image2](./assets/image2.png)
 
 Git clone and run `opentf` on own local machine.
 
@@ -275,7 +275,7 @@ docker_container.nginx: Creation complete after 2s [id=7440041e3dfebcd576edc3aac
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
 
-![image3](/blog-posts/opentf-fork-available/assets/image3.png)
+![image3](./assets/image3.png)
 
 ### Is it possible to migrate existing resources
 
