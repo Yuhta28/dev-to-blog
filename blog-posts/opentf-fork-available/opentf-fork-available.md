@@ -37,7 +37,7 @@ In August 2023, HashiCorp, a developer of OSS such as Terraform, switched Terraf
 
 https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
 
-{% embed https://dev.to/yuta28 %}
+{% embed https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license %}
 
 This license change will not directly affect HashiCorp users of Terraform and other products. However, there is a movement against HashiCorp's license change, and a group has formed to pursue true open source, forked from Terraform. It is [OpenTF Foundation](https://opentf.org/).
 
