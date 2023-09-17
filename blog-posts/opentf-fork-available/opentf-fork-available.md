@@ -19,7 +19,13 @@ _I write articles in English with the help of DeepL_
       <li><a href="#about-monetization-of-terraform">About monetization of Terraform</a></li>
     </ul>
   </li>
-  <li><a href="#forked-opentf">Forked OpenTF</a></li>
+  <li><a href="#forked-opentf">Forked OpenTF</a>
+    <ul>
+      <li><a href="#is-it-possible-to-migrate-existing-resources">Is it possible to migrate existing resources</a></li>
+    </ul>  
+  </li>
+  <li><a href="#hands-on">Hands-on</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
   <li><a href="#original">Original</a></li>
   <li><a href="#references">References</a></li>
 </ul>
@@ -36,7 +42,7 @@ According to the manifesto, the OpenTF Foundation had demanded that HashiCorp sw
 
 And so, on September 6, 2023 OpenTF was forked.
 
-![](/blog-posts/opentf-fork-available/assets/image1.png)  
+![image1](/blog-posts/opentf-fork-available/assets/image1.png)  
 *https://x.com/opentforg/status/1699076153968095494?s=20*
 
 What kind of OSS is OpenTF? And why did they decide to fork from Terraform? Let's take a look at their manifesto.
@@ -130,9 +136,9 @@ To be honest, I think Terraform Cloud has become a little more difficult to beca
 
 OpenTF forked on September 6, 2023 already has over 5,000 stars.
 
-![](/blog-posts/opentf-fork-available/assets/image2.png)
+![image2](/blog-posts/opentf-fork-available/assets/image2.png)
 
-Git clone and run `opentf` on your local machine.
+Git clone and run `opentf` on own local machine.
 
 ```terminal
 $ git clone git@github.com:opentffoundation/opentf.git
@@ -146,8 +152,232 @@ OpenTF v1.6.0-dev
 on linux_amd64
 ```
 
+## Hands-on
+
+As a tutorial, play [hands-on](https://developer.hashicorp.com/terraform/tutorials/docker-get-started) to deploy Docker containers of nginx from OpenTF.
+
+```hcl
+terraform {
+  required_providers {
+    docker = {
+      source = "kreuzwerker/docker"
+      version = "~> 3.0.1"
+    }
+  }
+}
+
+provider "docker" {}
+
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = false
+}
+
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.image_id
+  name  = "tutorial"
+  ports {
+    internal = 80
+    external = 8000
+  }
+}
+```
+
+Run `opentf init` command on the directory where `main.tf` file is placed just as with Terraform and create the project.
+
+```terminal
+$ opentf init
+~~~~~~~~~~~~~~~~~~~~~~~
+OpenTF has been successfully initialized!
+
+You may now begin working with OpenTF. Try running "opentf plan" to see
+any changes that are required for your infrastructure. All OpenTF commands
+should now work.
+~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+After running `opentf apply` command and launching Docker containers and nginx was displayed in the browser.
+
+```terminal
+$ opentf apply
+
+OpenTF used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+OpenTF will perform the following actions:
+
+  # docker_container.nginx will be created
+  + resource "docker_container" "nginx" {
+      + attach                                      = false
+      + bridge                                      = (known after apply)
+      + command                                     = (known after apply)
+      + container_logs                              = (known after apply)
+      + container_read_refresh_timeout_milliseconds = 15000
+      + entrypoint                                  = (known after apply)
+      + env                                         = (known after apply)
+      + exit_code                                   = (known after apply)
+      + hostname                                    = (known after apply)
+      + id                                          = (known after apply)
+      + image                                       = (known after apply)
+      + init                                        = (known after apply)
+      + ipc_mode                                    = (known after apply)
+      + log_driver                                  = (known after apply)
+      + logs                                        = false
+      + must_run                                    = true
+      + name                                        = "tutorial"
+      + network_data                                = (known after apply)
+      + read_only                                   = false
+      + remove_volumes                              = true
+      + restart                                     = "no"
+      + rm                                          = false
+      + runtime                                     = (known after apply)
+      + security_opts                               = (known after apply)
+      + shm_size                                    = (known after apply)
+      + start                                       = true
+      + stdin_open                                  = false
+      + stop_signal                                 = (known after apply)
+      + stop_timeout                                = (known after apply)
+      + tty                                         = false
+      + wait                                        = false
+      + wait_timeout                                = 60
+
+      + ports {
+          + external = 8000
+          + internal = 80
+          + ip       = "0.0.0.0"
+          + protocol = "tcp"
+        }
+    }
+
+  # docker_image.nginx will be created
+  + resource "docker_image" "nginx" {
+      + id           = (known after apply)
+      + image_id     = (known after apply)
+      + keep_locally = false
+      + name         = "nginx:latest"
+      + repo_digest  = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  OpenTF will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+docker_image.nginx: Creating...
+docker_image.nginx: Still creating... [10s elapsed]
+docker_image.nginx: Creation complete after 10s [id=sha256:f5a6b296b8a29b4e3d89ffa99e4a86309874ae400e82b3d3993f84e1e3bb0eb9nginx:latest]
+docker_container.nginx: Creating...
+docker_container.nginx: Creation complete after 2s [id=7440041e3dfebcd576edc3aacd39ce16601447b87bde79ac97f72d20996f78e6]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+```
+
+![image3](/blog-posts/opentf-fork-available/assets/image3.png)
+
+### Is it possible to migrate existing resources
+
+I have confirmed that I create a new resource with OpenTF. However, if already used Terraform for IaC, I would like to migrate it instead of creating a new one. I have confirmed that I can deploy updates and delete resources using `opentf` commands for resources created in Terraform.
+
+```terminal
+#resource created by Terraform
+$ terraform state list
+module.module-network.aws_db_subnet_group.database[0]
+module.module-network.aws_default_network_acl.this[0]
+module.module-network.aws_default_route_table.default[0]
+module.module-network.aws_default_security_group.this[0]
+module.module-network.aws_internet_gateway.this[0]
+module.module-network.aws_route.public_internet_gateway[0]
+module.module-network.aws_route_table.private[0]
+module.module-network.aws_route_table.private[1]
+module.module-network.aws_route_table.private[2]
+module.module-network.aws_route_table.public[0]
+module.module-network.aws_route_table_association.database[0]
+module.module-network.aws_route_table_association.database[1]
+module.module-network.aws_route_table_association.database[2]
+module.module-network.aws_route_table_association.private[0]
+module.module-network.aws_route_table_association.private[1]
+module.module-network.aws_route_table_association.private[2]
+module.module-network.aws_route_table_association.public[0]
+module.module-network.aws_route_table_association.public[1]
+module.module-network.aws_route_table_association.public[2]
+module.module-network.aws_subnet.database[0]
+module.module-network.aws_subnet.database[1]
+module.module-network.aws_subnet.database[2]
+module.module-network.aws_subnet.private[0]
+module.module-network.aws_subnet.private[1]
+module.module-network.aws_subnet.private[2]
+module.module-network.aws_subnet.public[0]
+module.module-network.aws_subnet.public[1]
+module.module-network.aws_subnet.public[2]
+module.module-network.aws_vpc.this[0]
+
+$ opentf state list
+module.module-network.aws_db_subnet_group.database[0]
+module.module-network.aws_default_network_acl.this[0]
+module.module-network.aws_default_route_table.default[0]
+module.module-network.aws_default_security_group.this[0]
+module.module-network.aws_internet_gateway.this[0]
+module.module-network.aws_route.public_internet_gateway[0]
+module.module-network.aws_route_table.private[0]
+module.module-network.aws_route_table.private[1]
+module.module-network.aws_route_table.private[2]
+module.module-network.aws_route_table.public[0]
+module.module-network.aws_route_table_association.database[0]
+module.module-network.aws_route_table_association.database[1]
+module.module-network.aws_route_table_association.database[2]
+module.module-network.aws_route_table_association.private[0]
+module.module-network.aws_route_table_association.private[1]
+module.module-network.aws_route_table_association.private[2]
+module.module-network.aws_route_table_association.public[0]
+module.module-network.aws_route_table_association.public[1]
+module.module-network.aws_route_table_association.public[2]
+module.module-network.aws_subnet.database[0]
+module.module-network.aws_subnet.database[1]
+module.module-network.aws_subnet.database[2]
+module.module-network.aws_subnet.private[0]
+module.module-network.aws_subnet.private[1]
+module.module-network.aws_subnet.private[2]
+module.module-network.aws_subnet.public[0]
+module.module-network.aws_subnet.public[1]
+module.module-network.aws_subnet.public[2]
+module.module-network.aws_vpc.this[0]
+
+#possible to delete resources by opentf command
+$ opentf destroy
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Plan: 0 to add, 0 to change, 29 to destroy.
+
+Do you really want to destroy all resources?
+  OpenTF will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+~~~~~~~~~~~~~~~~~~~~~~~
+Destroy complete! Resources: 29 destroyed.
+```
+
+However, OpenTF is still under development for an alpha release and support is limited to test and development environments.[^9]
+
+> Currently, OpenTF supports local testing and development: you can build the code, run the tests, build opentf binaries, and so on. That means you can now start experimenting with OpenTF and contributing back via Issues, PRs, and RFCs.
+
+If you find any bugs or errors, contribute to the community by filing an issues or PR.
+
+[^9]: https://opentf.org/fork
+
+## Conclusion
+
+I tried OpenTF, which is a forked of Terraform. I think there are pros and cons to what the Foundation is claiming. I watch how the de facto standard for IaC turns into a tool in the future.
+
 ## Original
 
 https://zenn.dev/yuta28/articles/fork-opentf-from-terraform
 
 ## References
+
+https://mariadb.com/ja/resources/blog/mariadb-bsl/  
+https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%81%AE%E6%AD%B4%E5%8F%B2  
+https://zenn.dev/koduki/articles/45f65a5318f019
