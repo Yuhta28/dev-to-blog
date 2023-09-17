@@ -1,7 +1,7 @@
 ---
 title: OpenTF forked Terraform is now available
 published: false
-cover_image: 
+cover_image:
 description:
 tags: terraform, opentf, iac
 ---
