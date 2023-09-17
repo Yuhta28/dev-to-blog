@@ -1,7 +1,7 @@
 ---
 title: OpenTF forked Terraform is now available
 published: false
-cover_image: ![image5](/blog-posts/opentf-fork-available/assets/image1.png)
+cover_image:
 description:
 tags: terraform, opentf, iac
 ---
@@ -34,6 +34,8 @@ _I write articles in English with the help of DeepL_
 ## Introduction
 
 In August 2023, HashiCorp, a developer of OSS such as Terraform, switched Terraform from an open source license to the Business Source License (BSL).
+
+<iframe class="hatenablogcard" style="width:100%;height:155px;max-width:680px;" title="Licens" src="https://hatenablog-parts.com/embed?url=https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license" width="300" height="150" frameborder="0" scrolling="no"></iframe>
 
 https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
 
