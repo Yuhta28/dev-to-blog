@@ -45,8 +45,7 @@ According to the manifesto, the OpenTF Foundation had demanded that HashiCorp sw
 
 And so, on September 6, 2023 OpenTF was forked.
 
-![image1](/blog-posts/opentf-fork-available/assets/image1.png)  
-*https://x.com/opentforg/status/1699076153968095494?s=20*
+{% twitter 1699076153968095494 %}
 
 What kind of OSS is OpenTF? And why did they decide to fork from Terraform? Let's take a look at their manifesto.
 
