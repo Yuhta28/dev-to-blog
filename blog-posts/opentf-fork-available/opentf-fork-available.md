@@ -53,6 +53,14 @@ https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
 <meta name="twitter:image" content="https://html.sammy-codes.com/images/large-profile.jpg" />
 </head>
 
+<head>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Sammy the Shark" />
+<meta property="og:description" content="Senior Selachimorpha at DigitalOcean" />
+<meta property="og:url" content="https://html.sammy-codes.com/" />
+<meta property="og:image" content="https://html.sammy-codes.com/images/large-profile.jpg" />
+</head>
+
 This license change will not directly affect HashiCorp users of Terraform and other products. However, there is a movement against HashiCorp's license change, and a group has formed to pursue true open source, forked from Terraform. It is [OpenTF Foundation](https://opentf.org/).
 
 According to the manifesto, the OpenTF Foundation had demanded that HashiCorp switches Terraform back to an open-source license in order for Terraform to remain truly open source, and stated that it would maintain OpenTF forked from Terraform, if HashiCorp would not.
