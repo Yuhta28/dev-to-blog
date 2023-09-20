@@ -1,9 +1,9 @@
 ---
-title: OpenTF forked Terraform is now available
+title: OpenTofu forked Terraform is now available
 published: true
 cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iu4tlsk1fc4sb382euyd.jpg
 description:
-tags: terraform, opentf, iac, opensource
+tags: terraform, opentofu, iac, opensource
 ---
 
 _I write articles in English with the help of DeepL_
@@ -37,19 +37,19 @@ In August 2023, HashiCorp, a developer of OSS such as Terraform, switched Terraf
 
 {% cta https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license %} HashiCorp adopts Business Source License {% endcta %}
 
-This license change will not directly affect HashiCorp users of Terraform and other products. However, there is a movement against HashiCorp's license change, and a group has formed to pursue true open source, forked from Terraform. It is [OpenTF Foundation](https://opentf.org/).
+This license change will not directly affect HashiCorp users of Terraform and other products. However, there is a movement against HashiCorp's license change, and a group has formed to pursue true open source, forked from Terraform. It is [OpenTF Foundation](https://https://opentofu.org/).
 
 According to the manifesto, the OpenTF Foundation had demanded that HashiCorp switches Terraform back to an open-source license in order for Terraform to remain truly open source, and stated that it would maintain OpenTF forked from Terraform, if HashiCorp would not.
 
-And so, on September 6, 2023 OpenTF was forked.
+And so, on September 6, 2023 OpenTF was forked. Moreover, OpenTF has been renamed OpenTofu and the OpenTF Foundation joined the Linux Foundation.
 
 {% twitter 1699076153968095494 %}
 
-What kind of OSS is OpenTF? And why did they decide to fork from Terraform? Let's take a look at their manifesto.
+What kind of OSS is OpenTofu? And why did they decide to fork from Terraform? Let's take a look at their manifesto.
 
 ## Target Audience
 
-- People who want to know about OpenTF
+- People who want to know about OpenTofu
 - People who want to know about the Foundation's claims
 
 ## About Open Source
@@ -132,9 +132,9 @@ To be honest, I think Terraform Cloud has become a little more difficult to beca
 
 [^8]: https://www.scalr.com/
 
-## Forked OpenTF
+## Forked OpenTofu
 
-OpenTF forked on September 6, 2023 already has over 5,000 stars.
+OpenTofu forked on September 6, 2023 already has over 6,000 stars.
 
 ![image2](./assets/image2.png)
 
@@ -360,17 +360,17 @@ Do you really want to destroy all resources?
 Destroy complete! Resources: 29 destroyed.
 ```
 
-However, OpenTF is still under development for an alpha release and support is limited to test and development environments.[^9]
+However, OpenTofu is still under development for an alpha release and support is limited to test and development environments.[^9]
 
-> Currently, OpenTF supports local testing and development: you can build the code, run the tests, build opentf binaries, and so on. That means you can now start experimenting with OpenTF and contributing back via Issues, PRs, and RFCs.
+> Currently, OpenTofu supports local testing and development: you can build the code, run the tests, build opentf binaries, and so on. That means you can now start experimenting with OpenTofu and contributing back via Issues, PRs, and RFCs.
 
 If you find any bugs or errors, contribute to the community by filing an issues or PR.
 
-[^9]: https://opentf.org/fork
+[^9]: https://opentofu.org/blog/the-opentofu-fork-is-now-available/
 
 ## Conclusion
 
-I tried OpenTF, which is a forked of Terraform. I think there are pros and cons to what the Foundation is claiming. I watch how the de facto standard for IaC turns into a tool in the future.
+I tried OpenTofu, which is a forked of Terraform. I think there are pros and cons to what the Foundation is claiming. I watch how the de facto standard for IaC turns into a tool in the future.
 
 ## Original
 
