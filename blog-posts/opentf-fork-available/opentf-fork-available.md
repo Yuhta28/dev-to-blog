@@ -20,12 +20,12 @@ _I write articles in English with the help of DeepL_
       <li><a href="#about-monetization-of-terraform">About monetization of Terraform</a></li>
     </ul>
   </li>
-  <li><a href="#forked-opentf">Forked OpenTF</a>
+  <li><a href="#forked-opentofu">Forked OpenTofu</a></li>
+  <li><a href="#hands-on">Hands-on</a>
     <ul>
       <li><a href="#is-it-possible-to-migrate-existing-resources">Is it possible to migrate existing resources</a></li>
-    </ul>  
+    </ul>
   </li>
-  <li><a href="#hands-on">Hands-on</a></li>
   <li><a href="#conclusion">Conclusion</a></li>
   <li><a href="#original">Original</a></li>
   <li><a href="#references">References</a></li>
