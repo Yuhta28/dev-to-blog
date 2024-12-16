@@ -103,50 +103,70 @@ Passing on Arn info of IAM role created to the other AWS resources, the AWS reso
 # CloudFormation template file
 AWSTemplateFormatVersion: '2010-09-09'
 Resources:
-  LambdaFunction:
-    Type: 'AWS::Lambda::Function'
-    Properties:
-      FunctionName: 'efs-s3'
-      Role: !GetAtt IAMRole.Arn
+    EC2Instance:
+        Type: 'AWS::EC2::Instance'
+        Properties:
+            IamInstanceProfile: !Ref IAMRole
+            Tags:
+              - Key: "Name"
+                Value: "Test"
 
-  IAMRole:
-    Type: 'AWS::IAM::Role'
-    Properties:
-      Path: '/'
-      RoleName: 'efs-S3'
-      AssumeRolePolicyDocument:
-        Version:'2012-10-17'
-        Statement:
-          - Effect:Allow
-            Principal:
-            Service:
-              - lambda.amazonaws.com
-            Action:
-              - 'sts:AssumeRole'
+    IAMRole:
+        Type: 'AWS::IAM::Role'
+        Properties:
+            Path: '/'
+            RoleName: 'Yuta20220815'
+            AssumeRolePolicyDocument:
+              Version:2012-10-17
+              Statement:
+                 - Effect:Allow
+                   Principal:
+                     Service:
+                       - ec2.amazonaws.com
+                     Action:
+                       - sts:AssumeRole
+
+    # Need to create an IAM instance profile
+    IAMInstanceProfile:
+        Type: 'AWS::IAM::InstanceProfile'
+        Properties:
+            Path: '/'
+            InstanceProfileName: !Ref IAMRole
+            Roles:
+              - !Ref IAMRole
 ```
 
 ```terraform
 # Terraform tf file
-resource "aws_lambda_function" "LambdaFunction" {
-    function_name = "efs-s3"
-    role = "${aws_iam_role.IAMRole.arn}"
+resource "aws_instance" "EC2Instance" {
+    tags = {
+        Name = "Test"
+    }
+    iam_instance_profile = aws_iam_role.IAMRole.name
 }
 
 resource "aws_iam_role" "IAMRole" {
     path = "/"
-    name = "efs-S3"
+    name = "Yuta20220815"
     assume_role_policy = jsonencode({
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Principal": {
-          "Service": "lambda.amazonaws.com"
-        },
-        "Action": "sts:AssumeRole"
-      }
-    ]
+        Version = "2012-10-17"
+        Statement = [
+            {
+                Effect = "Allow"
+                Principal = {
+                    Service = "ec2.amazonaws.com"
+                }
+                Action = "sts:AssumeRole"
+            }
+        ]
     })
+}
+
+# Need to create an IAM instance profile
+resource "aws_iam_instance_profile" "IAMInstanceProfile" {
+    path = "/"
+    name = aws_iam_role.IAMRole.name
+    role = aws_iam_role.IAMRole.name
 }
 ```
 
